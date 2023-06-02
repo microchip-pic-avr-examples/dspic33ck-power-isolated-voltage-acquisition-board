@@ -14,15 +14,15 @@
   @Description
     This source file provides APIs for driver for SPI1.
     Generation Information :
-        Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - 1.170.0
+        Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - 1.171.1
         Device            :  dsPIC33CK32MC102
     The generated drivers are tested against the following:
-        Compiler          :  XC16 v1.61
-        MPLAB             :  MPLAB X v5.45
+        Compiler          :  XC16 v1.70
+        MPLAB             :  MPLAB X v5.50
 */
 
 /*
-    (c) 2022 Microchip Technology Inc. and its subsidiaries. You may use this
+    (c) 2020 Microchip Technology Inc. and its subsidiaries. You may use this
     software and any derivatives exclusively with Microchip products.
 
     THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER

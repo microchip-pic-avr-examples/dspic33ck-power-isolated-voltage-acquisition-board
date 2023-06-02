@@ -13,15 +13,15 @@
   @Description:
     This file will be removed in future MCC releases. Use system.h instead.
     Generation Information :
-        Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - 1.170.0
+        Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - 1.171.1
         Device            :  dsPIC33CK32MC102
     The generated drivers are tested against the following:
-        Compiler          :  XC16 v1.61
-        MPLAB             :  MPLAB X v5.45
+        Compiler          :  XC16 v1.70
+        MPLAB             :  MPLAB X v5.50
 */
 
 /*
-    (c) 2022 Microchip Technology Inc. and its subsidiaries. You may use this
+    (c) 2020 Microchip Technology Inc. and its subsidiaries. You may use this
     software and any derivatives exclusively with Microchip products.
 
     THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER
@@ -53,15 +53,15 @@
 #include "system_types.h"
 #include "reset.h"
 
-#include "reset.h"
+#include "tmr1.h"
 #include "ext_int.h"
-#include "cmp1.h"
-#include "spi1.h"
 #include "interrupt_manager.h"
 #include "traps.h"
-#include "adc1.h"
-#include "tmr1.h"
+#include "spi1.h"
 #include "watchdog.h"
+#include "cmp1.h"
+#include "reset.h"
+#include "adc1.h"
 
 #warning "This file will be removed in future MCC releases. Use system.h instead."
 

@@ -1,6 +1,27 @@
+/**
+  Generated main.c file from MPLAB Code Configurator
+
+  @Company
+    Microchip Technology Inc.
+
+  @File Name
+    main.c
+
+  @Summary
+    This is the generated main.c using PIC24 / dsPIC33 / PIC32MM MCUs.
+
+  @Description
+    This source file provides main entry point for system initialization and application code development.
+    Generation Information :
+        Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - 1.171.1
+        Device            :  dsPIC33CK32MC102
+    The generated drivers are tested against the following:
+        Compiler          :  XC16 v1.70
+        MPLAB 	          :  MPLAB X v5.50
+*/
 
 /*
-    (c) 2022 Microchip Technology Inc. and its subsidiaries. You may use this
+    (c) 2020 Microchip Technology Inc. and its subsidiaries. You may use this
     software and any derivatives exclusively with Microchip products.
 
     THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER
@@ -19,56 +40,27 @@
 
     MICROCHIP PROVIDES THIS SOFTWARE CONDITIONALLY UPON YOUR ACCEPTANCE OF THESE
     TERMS.
- */
+*/
 
+/**
+  Section: Included Files
+*/
 #include "mcc_generated_files/system.h"
-#include "mcc_generated_files/watchdog.h"
-#include "mcc_generated_files/tmr1.h"
-#include "mcc_generated_files/ext_int.h"
-#include "isr.h"
-#include "revision.h"
 
-//------------------------------------------------------------------------------
-// compile time protection
-//------------------------------------------------------------------------------
-#ifndef BIDIRECTIONAL
-#error "BIDIRECTIONAL needs to be defined as '0' or '1' in revision.h"
-#else
-#if (BIDIRECTIONAL != '0') && (BIDIRECTIONAL != '1')
-#error "BIDIRECTIONAL needs to be defined as '0' or '1' in revision.h"
-#endif 
-#endif // #ifndef BIDIRECTIONAL
-
-//------------------------------------------------------------------------------
-// main()
-//------------------------------------------------------------------------------
-// note: most of the source code is located in isr.c
-
+/*
+                         Main application
+ */
 int main(void)
 {
-  // initialize the device
-  SYSTEM_Initialize();
-  
-  // set interrupt callback function. Project supports both uni-directional
-  // and bi-directional isolated voltage acqusition board hardware.
-#if BIDIRECTIONAL == '0'     
-  TMR1_SetInterruptHandler(&ISR_CallBack); // set timer 1 interrupt callback function 
-  EX_INT1_InterruptDisable(); // disable external interrupt
-#else
-  IEC0bits.T1IE = false;      // disable timer 1 interrupt
-#endif
-  
-  // enable watchdog timer. With MCC settings, should time out in around 2ms
-  WATCHDOG_TimerSoftwareEnable();   
-
-  while (1)
-  {
-    // clear watchdog timer
-    WATCHDOG_TimerClear();
-  }
-  return 1;
+    // initialize the device
+    SYSTEM_Initialize();
+    while (1)
+    {
+        // Add your application code
+    }
+    return 1; 
 }
 /**
  End of File
- */
+*/
 

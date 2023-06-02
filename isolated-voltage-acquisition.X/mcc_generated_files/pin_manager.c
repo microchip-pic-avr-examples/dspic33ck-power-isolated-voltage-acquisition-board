@@ -15,15 +15,15 @@
   @Description:
     This source file provides implementations for PIN MANAGER.
     Generation Information :
-        Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - 1.170.0
+        Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - 1.171.1
         Device            :  dsPIC33CK32MC102
     The generated drivers are tested against the following:
-        Compiler          :  XC16 v1.61
-        MPLAB 	          :  MPLAB X v5.45
+        Compiler          :  XC16 v1.70
+        MPLAB 	          :  MPLAB X v5.50
 */
 
 /*
-    (c) 2022 Microchip Technology Inc. and its subsidiaries. You may use this
+    (c) 2020 Microchip Technology Inc. and its subsidiaries. You may use this
     software and any derivatives exclusively with Microchip products.
 
     THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER
@@ -95,10 +95,10 @@ void PIN_MANAGER_Initialize (void)
      ***************************************************************************/
     __builtin_write_RPCON(0x0000); // unlock PPS
 
+    RPOR6bits.RP44R = 0x0005;    //RB12->SPI1:SDO1
+    RPINR0bits.INT1R = 0x002A;    //RB10->EXT_INT:INT1
     RPINR20bits.SCK1R = 0x002E;    //RB14->SPI1:SCK1
     RPOR7bits.RP46R = 0x0006;    //RB14->SPI1:SCK1
-    RPINR0bits.INT1R = 0x002A;    //RB10->EXT_INT:INT1
-    RPOR6bits.RP44R = 0x0005;    //RB12->SPI1:SDO1
 
     __builtin_write_RPCON(0x0800); // lock PPS
 }

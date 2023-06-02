@@ -13,15 +13,15 @@
   @Description:
     This header file provides implementations for driver APIs for all modules selected in the GUI.
     Generation Information :
-        Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - 1.170.0
+        Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - 1.171.1
         Device            :  dsPIC33CK32MC102
     The generated drivers are tested against the following:
-        Compiler          :  XC16 v1.61
-        MPLAB             :  MPLAB X v5.45
+        Compiler          :  XC16 v1.70
+        MPLAB             :  MPLAB X v5.50
 */
 
 /*
-    (c) 2022 Microchip Technology Inc. and its subsidiaries. You may use this
+    (c) 2020 Microchip Technology Inc. and its subsidiaries. You may use this
     software and any derivatives exclusively with Microchip products.
 
     THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER
@@ -71,7 +71,7 @@
 
 // FWDT
 #pragma config RWDTPS = PS1    //Run Mode Watchdog Timer Post Scaler select bits->1:1
-#pragma config RCLKSEL = LPRC    //Watchdog Timer Clock Select bits->Always use BFRC/256
+#pragma config RCLKSEL = LPRC    //Watchdog Timer Clock Select bits->Always use LPRC
 #pragma config WINDIS = ON    //Watchdog Timer Window Enable bit->Watchdog Timer in Non-Window mode
 #pragma config WDTWIN = WIN25    //Watchdog Timer Window Select bits->WDT Window is 25% of WDT period
 #pragma config SWDTPS = PS1    //Sleep Mode Watchdog Timer Post Scaler select bits->1:1
@@ -114,13 +114,13 @@
 #include "clock.h"
 #include "system.h"
 #include "system_types.h"
+#include "tmr1.h"
 #include "ext_int.h"
-#include "cmp1.h"
-#include "spi1.h"
 #include "interrupt_manager.h"
 #include "traps.h"
+#include "spi1.h"
+#include "cmp1.h"
 #include "adc1.h"
-#include "tmr1.h"
 
 void SYSTEM_Initialize(void)
 {
@@ -130,8 +130,8 @@ void SYSTEM_Initialize(void)
     SPI1_Initialize();
     CMP1_Initialize();
     ADC1_Initialize();
-    EXT_INT_Initialize();
     TMR1_Initialize();
+    EXT_INT_Initialize();
     INTERRUPT_GlobalEnable();
     SYSTEM_CORCONModeOperatingSet(CORCON_MODE_PORVALUES);
 }
