@@ -1,4 +1,4 @@
-# dspic33ck-power-isolated-voltage-acquisition-board v1.00
+# dspic33ck-power-isolated-voltage-acquisition-board v1.0.0
 
 ### Release Highlights
 
