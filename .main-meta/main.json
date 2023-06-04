@@ -1,0 +1,49 @@
+{
+   "metaDataVersion":"1.0.0",
+   "category":"com.microchip.ide.project",
+   "content":{
+      "metaDataVersion":"1.3.0",
+      "name":"com.microchip.mplabx.project.dspic33ck-power-isolated-voltage-acquisition-board",
+      "version":"1.0.0",
+      "displayName":"MPLABx project for dsPIC33CK on the Isolated Voltage Acquisition Board",
+      "projectName":"dspic33ck-power-isolated-voltage-acquisition-board",
+      "shortDescription":"Upon receipt on external trigger on pin 3 of J4, measure 3x phase voltages with ADC, then send 3 readings with checksum over isolation barrier via 2 wire SPI",
+      "ide":{
+         "name":"MPLABX",
+         "semverRange":">=6.0.0"
+      },
+      "compiler":{
+         "name":"XC16",
+         "semverRange":">=2.10.0"
+      },
+      "dfp":{
+         "name":"dsPIC33CK-MC_DFP",
+         "semverRange":">=1.4.92"
+      },
+	  "configurator": {
+         "name": "MCC",
+         "semverRange": ">=5.1.17"
+      },
+      "device":{
+         "metaDataVersion":"1.0.0",
+         "category":"com.microchip.portal.contentRef",
+         "content":{
+            "metaDataVersion":"1.0.0",
+            "category":"com.microchip.device",
+            "name":"dsPIC33CK32MC102",
+            "versionRange":"*"
+         }
+      },
+      "keywords":[
+		 "DSC",
+		 "dsPIC",
+		 "Power",
+		 "Power Conversion",
+		 "Power Supply",
+		 "SMPS",
+		 "Digital Power",
+		 "PFC",
+		 "Power Factor Correction"
+      ]
+   }
+}
