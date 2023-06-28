@@ -13,12 +13,12 @@
   @Description
     This source file provides APIs for CMP1.
     Generation Information :
-        Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - 1.171.1
+        Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - 1.171.2
         Device            :  dsPIC33CK32MC102
         Driver Version    :  1.00
     The generated drivers are tested against the following:
-        Compiler          :  XC16 v1.70
-        MPLAB 	          :  MPLAB X v5.50
+        Compiler          :  XC16 v2.10
+        MPLAB 	          :  MPLAB X v6.05
 */
 
 
